@@ -1,0 +1,13 @@
+*.class
+
+# Package Files #
+*.jar
+
+# Maven File #
+target/
+
+# Eclipse File #
+.classpath
+.project
+.settings
+.metadata
