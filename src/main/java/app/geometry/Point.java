@@ -10,16 +10,28 @@ public class Point implements Geometry {
 		this.y = y;
 	}
 
+	@Override
 	public Geometry intersect(final Geometry geometry) {
 		return geometry.intersect(this);
 	}
 
-	public Geometry intersect(final Nothing np) {
-		return np.intersect(this); // Use commutative operation
+	@Override
+	public Geometry intersect(final Nothing nothing) {
+		return nothing.intersect(this); // Use commutative operation
 	}
 
+	@Override
 	public Geometry intersect(final Point point) {
 		if (x == point.x && y == point.y) {
+			return this;
+		}
+
+		return new Nothing();
+	}
+
+	@Override
+	public Geometry intersect(final Line line) {
+		if (y == line.getSlope() * x + line.getIntercept()) {
 			return this;
 		}
 
@@ -34,5 +46,10 @@ public class Point implements Geometry {
 
 		Point other = (Point) o;
 		return x == other.x && y == other.y;
+	}
+
+	@Override
+	public String toString() {
+		return "Point [x=" + x + ", y=" + y + "]";
 	}
 }

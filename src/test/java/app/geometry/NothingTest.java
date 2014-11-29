@@ -23,4 +23,9 @@ public class NothingTest {
 	public void intersectingPointShouldReturnNothing() {
 		assertEquals(new Nothing(), nothing.intersect(new Point(1, 2)));
 	}
+
+	@Test
+	public void intersectingLineShouldReturnNothing() {
+		assertEquals(new Nothing(), nothing.intersect(new Line(1, 2)));
+	}
 }

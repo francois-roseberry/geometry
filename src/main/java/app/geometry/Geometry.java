@@ -4,7 +4,9 @@ public interface Geometry {
 
 	Geometry intersect(Geometry geometry);
 
-	Geometry intersect(Nothing np);
+	Geometry intersect(Nothing nothing);
 
 	Geometry intersect(Point point);
+
+	Geometry intersect(Line line);
 }
