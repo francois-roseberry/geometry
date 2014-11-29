@@ -1,6 +1,6 @@
 package app.geometry;
 
-public class Point implements Geometry {
+public class Point extends Geometry {
 
 	private final int x;
 	private final int y;
@@ -8,16 +8,6 @@ public class Point implements Geometry {
 	public Point(final int x, final int y) {
 		this.x = x;
 		this.y = y;
-	}
-
-	@Override
-	public Geometry intersect(final Geometry geometry) {
-		return geometry.intersect(this);
-	}
-
-	@Override
-	public Geometry intersect(final Nothing nothing) {
-		return nothing.intersect(this); // Use commutative operation
 	}
 
 	@Override

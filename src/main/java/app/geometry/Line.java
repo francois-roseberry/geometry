@@ -1,6 +1,6 @@
 package app.geometry;
 
-public class Line implements Geometry {
+public class Line extends Geometry {
 
 	private final int slope;
 	private final int intercept;
@@ -16,16 +16,6 @@ public class Line implements Geometry {
 
 	public int getIntercept() {
 		return intercept;
-	}
-
-	@Override
-	public Geometry intersect(final Geometry geometry) {
-		return geometry.intersect(this);
-	}
-
-	@Override
-	public Geometry intersect(final Nothing nothing) {
-		return nothing.intersect(this); // Use commutative operation
 	}
 
 	@Override

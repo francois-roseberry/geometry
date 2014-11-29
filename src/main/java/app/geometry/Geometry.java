@@ -1,12 +1,20 @@
 package app.geometry;
 
-public interface Geometry {
+public abstract class Geometry {
 
-	Geometry intersect(Geometry geometry);
+	public Geometry intersect(final Geometry geometry) {
+		return geometry.intersect(this);
+	}
 
-	Geometry intersect(Nothing nothing);
+	public Geometry intersect(final Nothing nothing) {
+		return new Nothing();
+	}
 
-	Geometry intersect(Point point);
+	public Geometry intersect(final Point point) {
+		return new Nothing();
+	}
 
-	Geometry intersect(Line line);
+	public Geometry intersect(final Line line) {
+		return new Nothing();
+	}
 }
