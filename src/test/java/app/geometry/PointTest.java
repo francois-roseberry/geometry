@@ -7,12 +7,14 @@ import org.junit.Test;
 public class PointTest {
 	@Test
 	public void intersectingNothingShouldReturnNothing() {
-		assertEquals(new Nothing(), new Point(1, 2).intersect(new Nothing()));
+		assertEquals(Geometry.nothing(),
+				new Point(1, 2).intersect(Geometry.nothing()));
 	}
 
 	@Test
 	public void intersectingPointWithDifferentCoordinatesShouldReturnNothing() {
-		assertEquals(new Nothing(), new Point(1, 2).intersect(new Point(1, 3)));
+		assertEquals(Geometry.nothing(),
+				new Point(1, 2).intersect(new Point(1, 3)));
 	}
 
 	@Test
@@ -28,6 +30,7 @@ public class PointTest {
 
 	@Test
 	public void intersectingLineOnWhichItIsNotShouldReturnNothing() {
-		assertEquals(new Nothing(), new Point(1, 2).intersect(new Line(1, 0)));
+		assertEquals(Geometry.nothing(),
+				new Point(1, 2).intersect(new Line(1, 0)));
 	}
 }

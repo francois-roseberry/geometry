@@ -30,7 +30,7 @@ public class Line extends Geometry {
 				return this; // Same line
 			}
 
-			return new Nothing(); // Parallel lines do not intersect
+			return Geometry.nothing(); // Parallel lines do not intersect
 		}
 
 		int x = (line.intercept - intercept) / (slope - line.slope);

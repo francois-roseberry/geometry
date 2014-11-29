@@ -7,25 +7,25 @@ import org.junit.Test;
 
 public class NothingTest {
 
-	private Nothing nothing;
+	private Geometry.Nothing nothing;
 
 	@Before
 	public void setup() {
-		nothing = new Nothing();
+		nothing = Geometry.nothing();
 	}
 
 	@Test
 	public void intersectingNothingShouldReturnNothing() {
-		assertEquals(new Nothing(), nothing.intersect(new Nothing()));
+		assertEquals(Geometry.nothing(), nothing.intersect(Geometry.nothing()));
 	}
 
 	@Test
 	public void intersectingPointShouldReturnNothing() {
-		assertEquals(new Nothing(), nothing.intersect(new Point(1, 2)));
+		assertEquals(Geometry.nothing(), nothing.intersect(new Point(1, 2)));
 	}
 
 	@Test
 	public void intersectingLineShouldReturnNothing() {
-		assertEquals(new Nothing(), nothing.intersect(new Line(1, 2)));
+		assertEquals(Geometry.nothing(), nothing.intersect(new Line(1, 2)));
 	}
 }

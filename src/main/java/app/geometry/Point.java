@@ -16,7 +16,7 @@ public class Point extends Geometry {
 			return this;
 		}
 
-		return new Nothing();
+		return Geometry.nothing();
 	}
 
 	@Override
@@ -25,7 +25,7 @@ public class Point extends Geometry {
 			return this;
 		}
 
-		return new Nothing();
+		return Geometry.nothing();
 	}
 
 	@Override

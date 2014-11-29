@@ -7,7 +7,8 @@ import org.junit.Test;
 public class LineTest {
 	@Test
 	public void intersectingNothingShouldReturnNothing() {
-		assertEquals(new Nothing(), new Line(1, 2).intersect(new Nothing()));
+		assertEquals(Geometry.nothing(),
+				new Line(1, 2).intersect(Geometry.nothing()));
 	}
 
 	@Test
@@ -17,7 +18,8 @@ public class LineTest {
 
 	@Test
 	public void intersectingPointOutsideOfLineShouldReturnNothing() {
-		assertEquals(new Nothing(), new Line(1, 0).intersect(new Point(1, 2)));
+		assertEquals(Geometry.nothing(),
+				new Line(1, 0).intersect(new Point(1, 2)));
 	}
 
 	@Test
@@ -27,7 +29,8 @@ public class LineTest {
 
 	@Test
 	public void intersectingParallelLineShouldReturnNothing() {
-		assertEquals(new Nothing(), new Line(1, 2).intersect(new Line(1, 3)));
+		assertEquals(Geometry.nothing(),
+				new Line(1, 2).intersect(new Line(1, 3)));
 	}
 
 	@Test
