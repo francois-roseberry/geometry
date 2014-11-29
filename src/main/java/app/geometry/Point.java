@@ -14,7 +14,7 @@ public class Point implements Geometry {
 		return geometry.intersect(this);
 	}
 
-	public Geometry intersect(final NoPoints np) {
+	public Geometry intersect(final Nothing np) {
 		return np.intersect(this); // Use commutative operation
 	}
 
@@ -23,7 +23,7 @@ public class Point implements Geometry {
 			return this;
 		}
 
-		return new NoPoints();
+		return new Nothing();
 	}
 
 	@Override

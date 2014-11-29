@@ -1,12 +1,12 @@
 package app.geometry;
 
-public class NoPoints implements Geometry {
+public class Nothing implements Geometry {
 
 	public Geometry intersect(final Geometry geometry) {
 		return geometry.intersect(this);
 	}
 
-	public Geometry intersect(final NoPoints np) {
+	public Geometry intersect(final Nothing np) {
 		return this;
 	}
 
@@ -16,6 +16,6 @@ public class NoPoints implements Geometry {
 
 	@Override
 	public boolean equals(final Object o) {
-		return o instanceof NoPoints;
+		return o instanceof Nothing;
 	}
 }

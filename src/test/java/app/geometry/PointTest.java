@@ -6,13 +6,13 @@ import org.junit.Test;
 
 public class PointTest {
 	@Test
-	public void intersectingNoPointsShouldReturnNoPoints() {
-		assertEquals(new NoPoints(), new Point(1, 2).intersect(new NoPoints()));
+	public void intersectingNothingShouldReturnNothing() {
+		assertEquals(new Nothing(), new Point(1, 2).intersect(new Nothing()));
 	}
 
 	@Test
-	public void intersectingPointWithDifferentCoordinatesShouldReturnNoPoints() {
-		assertEquals(new NoPoints(), new Point(1, 2).intersect(new Point(1, 3)));
+	public void intersectingPointWithDifferentCoordinatesShouldReturnNothing() {
+		assertEquals(new Nothing(), new Point(1, 2).intersect(new Point(1, 3)));
 	}
 
 	@Test
