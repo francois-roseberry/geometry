@@ -1,9 +1,17 @@
 package app.geometry;
 
-public abstract class Geometry {
+import app.Environment;
+import app.expression.Expression;
+
+public abstract class Geometry implements Expression {
 
 	public static Nothing nothing() {
 		return new Nothing();
+	}
+
+	@Override
+	public Geometry eval(final Environment environment) {
+		return this; // All geometry values evaluate to themselves
 	}
 
 	public Geometry intersect(final Geometry geometry) {

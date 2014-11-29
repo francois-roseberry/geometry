@@ -1,9 +1,12 @@
 package app.geometry;
 
 import static org.junit.Assert.assertEquals;
+import static org.mockito.Matchers.any;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import app.Environment;
 
 public class NothingTest {
 
@@ -12,6 +15,11 @@ public class NothingTest {
 	@Before
 	public void setup() {
 		nothing = Geometry.nothing();
+	}
+
+	@Test
+	public void evaluatingNothingShouldReturnNothing() {
+		assertEquals(nothing, nothing.eval(any(Environment.class)));
 	}
 
 	@Test

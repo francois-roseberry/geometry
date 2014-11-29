@@ -1,10 +1,19 @@
 package app.geometry;
 
 import static org.junit.Assert.assertEquals;
+import static org.mockito.Matchers.any;
 
 import org.junit.Test;
 
+import app.Environment;
+
 public class PointTest {
+	@Test
+	public void evaluatingPointShouldReturnItself() {
+		assertEquals(new Point(1, 2),
+				new Point(1, 2).eval(any(Environment.class)));
+	}
+
 	@Test
 	public void intersectingNothingShouldReturnNothing() {
 		assertEquals(Geometry.nothing(),
